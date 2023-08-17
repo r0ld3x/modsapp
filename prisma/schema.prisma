@@ -11,21 +11,20 @@ datasource db {
 }
 
 model Post {
-  id        String   @id @default(cuid()) @map("_id")
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  title     String
-  content   String?
-  published Boolean  @default(false)
-  author    User?    @relation(fields: [authorId], references: [id])
-  authorId  String?
+  id            String   @id @default(cuid()) @map("_id")
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  title         String
+  content       String
+  downloadlink  String
+  playstorelink String
+  modtype       ModTypes
+  published     Boolean  @default(false)
+  urlString     String   @unique @map("url_string") // This is the url string that will be used to access the post
 }
 
-model User {
-  id        String   @id @default(cuid()) @map("_id")
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  name      String?
-  email     String   @unique
-  posts     Post[]
+enum ModTypes {
+  OTT
+  Featured
+  Other
 }

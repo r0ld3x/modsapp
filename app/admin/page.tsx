@@ -20,7 +20,7 @@ const Page = () => {
       await signIn("credentials", {
         email,
         password,
-        callbackUrl: "/adminpage",
+        callbackUrl: "/adminpanel/newpost",
       });
     } catch (error) {
       console.error("Error signing in:", error);
@@ -29,7 +29,7 @@ const Page = () => {
 
   return (
     <div className="h-screen w-full flex justify-center items-center">
-      <div className="h-fit w-1/2 flex flex-col justify-center flex-center bg-slate-800 p-5 rounded-lg">
+      <div className="h-screen w-1/2 flex flex-col justify-center flex-center bg-slate-800 p-5 rounded-lg">
         <h1 className={cn("text-2xl pb-3 text-center", roboto.className)}>
           Sign In
         </h1>
@@ -46,7 +46,7 @@ const Page = () => {
           />
           <Button
             onClick={handleSignInCredentials}
-            className="w-full bg-white text-xl uppercase font-bold font-sans"
+            className="w-full text-xl uppercase font-bold font-sans"
           >
             Login
           </Button>
