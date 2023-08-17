@@ -14,10 +14,10 @@ const AsideBar = () => {
   };
   return (
     <div className="h-full">
-      <div className="absolute py-5 transition-all duration-300">
+      <div className="absolute md:hidden py-5 transition-all duration-300">
         <Button
           onClick={handleMobileMenuToggle}
-          className="md:hidden flex flex-col justify-center items-center text-white text-lg font-bold bg-transparent
+          className="flex flex-col justify-center items-center text-white text-lg font-bold bg-transparent
           hover:bg-transparent hover:text-blue-500"
         >
           <Menu className="  text-2xl cursor-pointer" />
